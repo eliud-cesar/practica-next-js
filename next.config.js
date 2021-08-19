@@ -9,7 +9,7 @@ module.exports = phase => {
       if (isDeveloment) {
         return "https://jsonplaceholder.typicode.com"
       } else {
-        return "https://eliudcesar.netlify.app/api"
+        return "https://jsonplaceholder.typicode.com"
       }
     })()
   }
