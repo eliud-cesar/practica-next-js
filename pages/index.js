@@ -1,7 +1,8 @@
 import Head from 'next/head'
-import Header from '../components/sections/Header'
+import fetch from 'node-fetch'
+import Post from '../components/blog/Post'
 
-const Home = () => (
+const Home = ({ posts }) => (
   <div>
     <Head>
       <title>Home | {process.env.SITE_NAME}</title>
@@ -10,8 +11,23 @@ const Home = () => (
     <h1>EDblog</h1>
     <p>Bienvenidos a EDblog by EDteam</p>
 
-    <span>{process.env.ApiBlog}</span>
+    <div className="ed-grid m-grid-3 row-gap">
+      {
+        posts.map(p => <Post post={p} /> )
+      }
+    </div>
   </div>
 )
+
+export async function getStaticProps() {
+  const resp = await fetch(`${process.env.ApiBlog}/posts`)
+  const posts = await resp.json()
+
+  return {
+    props: {
+      posts
+    }
+  }
+}
 
 export default Home

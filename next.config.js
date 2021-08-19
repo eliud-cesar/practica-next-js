@@ -7,7 +7,7 @@ module.exports = phase => {
     SITE_NAME: "Blog de Eliud",
     ApiBlog: (() => {
       if (isDeveloment) {
-        return "https://jsonplaceholder.typicode.com/"
+        return "https://jsonplaceholder.typicode.com"
       } else {
         return "https://eliudcesar.netlify.app/api"
       }
