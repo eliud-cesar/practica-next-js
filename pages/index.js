@@ -1,12 +1,33 @@
-import Head from 'next/head'
 import fetch from 'node-fetch'
 import Post from '../components/blog/Post'
+import Head from 'next/head'
+import { NextSeo } from 'next-seo'
 
 const Home = ({ posts }) => (
   <div>
-    <Head>
-      <title>Home | {process.env.SITE_NAME}</title>
-    </Head>
+
+  <NextSeo
+      title="Bienvenido al Blog de Eliud Cesar"
+      description="El blog de un estudiante y programador"
+      openGraph={{
+        url: "https://blogeliud.vercel.com",
+        title: "Bienvenido al Blog de Eliud Cesar",
+        images: [
+          {
+            url: "https://edteam-media.s3.amazonaws.com/courses/medium/f7dad9a6-e060-4305-9adf-b9a9079075de.jpg",
+            width: 1280,
+            height: 720,
+            alt: "Foto de curso de React desde cero (2019)"
+          }
+        ],
+        site_name: "Blog de Eliud Cesar"
+      }}
+      twitter= {{
+        handle: "@eliud-cesar",
+        site: "@eliud-cesar",
+        cardType: "summary_large_image"
+      }}
+    />
     
     <h1>EDblog</h1>
     <p>Bienvenidos a EDblog by EDteam</p>
