@@ -34,7 +34,7 @@ const Home = ({ posts }) => (
 
     <div className="ed-grid m-grid-3 row-gap">
       {
-        posts.map(p => <Post post={p} /> )
+        posts.map(p => <Post key={p.id} post={p} /> )
       }
     </div>
   </div>
