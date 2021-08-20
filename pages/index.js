@@ -29,8 +29,8 @@ const Home = ({ posts }) => (
       }}
     />
     
-    <h1>EDblog</h1>
-    <p>Bienvenidos a EDblog by EDteam</p>
+    <h1>Eliud Blog</h1>
+    <p>Bienvenidos al blog de eliud - Next.js</p>
 
     <div className="ed-grid m-grid-3 row-gap">
       {
